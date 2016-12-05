@@ -1,0 +1,8 @@
+
+# Make sure you copy input bz file into input folder .
+run:
+	rm -rf output
+	sbt "run input output"
+
+
+clean: rm -rf output
