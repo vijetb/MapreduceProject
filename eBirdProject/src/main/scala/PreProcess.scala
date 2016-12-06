@@ -1,3 +1,6 @@
+import org.apache.spark.mllib.feature.Normalizer
+import org.apache.spark.mllib.feature.StandardScaler
+import org.apache.spark.mllib.linalg.Vectors
 import org.apache.spark.{SparkConf, SparkContext}
 
 object PreProcess {
@@ -7,7 +10,7 @@ object PreProcess {
       .setMaster("local")
 
     val sc = new SparkContext(conf)
-    val rawData = sc.textFile("input/input.csv")
+    val rawData = sc.textFile("input/testing_sample.csv")
 
     val preprocessedData = rawData.map(data => {
       val values = data.split(",")
@@ -23,7 +26,7 @@ object PreProcess {
        if(values(964).charAt(0)=='?') 6 else values(964),               // Min Temp
        if(values(965).charAt(0)=='?') 6 else values(965),              // Max  Temp
        if(values(966).charAt(0)=='?') 6 else values(966),              // Precipitation
-       values(967), // CAUS_SNOW - no change
+       if(values(967).charAt(0)=='?') 0 else values(967),              // CAUS_SNOW - if ? make it 0
        if(values(26).charAt(0)!='0') 1 else 0 // target value
       )
     })
@@ -33,6 +36,17 @@ object PreProcess {
     System.out.println(preprocessedData.count())
 
     preprocessedData.coalesce(1,true).saveAsTextFile("output")
-
+//    val normSampleData = sc.textFile("input/norm_test")
+//    val normSampleDataRDD = normSampleData.map(x => {
+//      val values = x.split(",")
+//      Vectors.dense(values(0).toDouble,values(1).toDouble,values(2).toDouble,values(3).toDouble,values(4).toDouble)
+//    })
+//
+////    val normalizer1 = new Normalizer()
+////    val data1 = normSampleDataRDD.map(x => (normalizer1.transform(x)))
+//    val scaler = new StandardScaler(withMean = true, withStd = true).fit(normSampleDataRDD)
+//      // Scale features using the scaler model
+//    val scaledFeatures = scaler.transform(normSampleDataRDD)
+//    scaledFeatures.coalesce(1,true).saveAsTextFile("output")
   }
 }
