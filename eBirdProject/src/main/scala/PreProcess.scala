@@ -12,7 +12,10 @@ object PreProcess {
     val sc = new SparkContext(conf)
     val rawData = sc.textFile("input/testing_sample.csv")
 
-    val preprocessedData = rawData.map(data => {
+    val rawDataWithougHeader =  rawData.mapPartitionsWithIndex { (idx, iter) => if (idx == 0) iter.drop(1) else iter }
+
+
+    val preprocessedData = rawDataWithougHeader.map(data => {
       val values = data.split(",")
       (values(1), //LocationId - no change
        values(5), //Month - no change
