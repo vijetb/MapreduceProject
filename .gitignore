@@ -17,3 +17,10 @@ project/plugins/project/
 .worksheet
 
 eBirdProject/input
+eBirdProject/output/
+
+
+
+eBirdProject/.idea/compiler.xml
+
+eBirdProject/.idea/copyright/profiles_settings.xml
