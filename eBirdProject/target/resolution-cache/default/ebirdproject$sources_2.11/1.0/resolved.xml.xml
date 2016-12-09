@@ -4,7 +4,7 @@
 		module="ebirdproject$sources_2.11"
 		revision="1.0"
 		status="integration"
-		publication="20161204225321"
+		publication="20161207201238"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>

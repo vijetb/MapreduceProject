@@ -1,4 +1,4 @@
-[info] Updating {file:/Users/Viji/IdeaProjects/MapreduceProject/eBirdProject/project/}ebirdproject-build...
+[info] Updating {file:/Users/Shetty/Desktop/MapReduce/Project/MapreduceProject/eBirdProject/project/}ebirdproject-build...
 [debug] :: resolving dependencies :: default#ebirdproject-build;0.1-SNAPSHOT
 [debug] 	confs: [compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool]
 [debug] 	validate = true
@@ -6074,19 +6074,19 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#template-resolver;0.1!template-resolver.jar
 [debug] 	[NOT REQUIRED] org.scala-lang#jline;2.10.6!jline.jar
 [debug] 	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar
-[debug] :: resolution report :: resolve 926ms :: artifacts dl 33ms
-[debug] 	report for default#ebirdproject-build;0.1-SNAPSHOT compile produced in /Users/Viji/IdeaProjects/MapreduceProject/eBirdProject/project/target/resolution-cache/reports/default-ebirdproject-build-compile.xml
-[debug] 	report for default#ebirdproject-build;0.1-SNAPSHOT runtime produced in /Users/Viji/IdeaProjects/MapreduceProject/eBirdProject/project/target/resolution-cache/reports/default-ebirdproject-build-runtime.xml
-[debug] 	report for default#ebirdproject-build;0.1-SNAPSHOT test produced in /Users/Viji/IdeaProjects/MapreduceProject/eBirdProject/project/target/resolution-cache/reports/default-ebirdproject-build-test.xml
-[debug] 	report for default#ebirdproject-build;0.1-SNAPSHOT provided produced in /Users/Viji/IdeaProjects/MapreduceProject/eBirdProject/project/target/resolution-cache/reports/default-ebirdproject-build-provided.xml
-[debug] 	report for default#ebirdproject-build;0.1-SNAPSHOT optional produced in /Users/Viji/IdeaProjects/MapreduceProject/eBirdProject/project/target/resolution-cache/reports/default-ebirdproject-build-optional.xml
-[debug] 	report for default#ebirdproject-build;0.1-SNAPSHOT compile-internal produced in /Users/Viji/IdeaProjects/MapreduceProject/eBirdProject/project/target/resolution-cache/reports/default-ebirdproject-build-compile-internal.xml
-[debug] 	report for default#ebirdproject-build;0.1-SNAPSHOT runtime-internal produced in /Users/Viji/IdeaProjects/MapreduceProject/eBirdProject/project/target/resolution-cache/reports/default-ebirdproject-build-runtime-internal.xml
-[debug] 	report for default#ebirdproject-build;0.1-SNAPSHOT test-internal produced in /Users/Viji/IdeaProjects/MapreduceProject/eBirdProject/project/target/resolution-cache/reports/default-ebirdproject-build-test-internal.xml
-[debug] 	report for default#ebirdproject-build;0.1-SNAPSHOT plugin produced in /Users/Viji/IdeaProjects/MapreduceProject/eBirdProject/project/target/resolution-cache/reports/default-ebirdproject-build-plugin.xml
-[debug] 	report for default#ebirdproject-build;0.1-SNAPSHOT sources produced in /Users/Viji/IdeaProjects/MapreduceProject/eBirdProject/project/target/resolution-cache/reports/default-ebirdproject-build-sources.xml
-[debug] 	report for default#ebirdproject-build;0.1-SNAPSHOT docs produced in /Users/Viji/IdeaProjects/MapreduceProject/eBirdProject/project/target/resolution-cache/reports/default-ebirdproject-build-docs.xml
-[debug] 	report for default#ebirdproject-build;0.1-SNAPSHOT pom produced in /Users/Viji/IdeaProjects/MapreduceProject/eBirdProject/project/target/resolution-cache/reports/default-ebirdproject-build-pom.xml
-[debug] 	report for default#ebirdproject-build;0.1-SNAPSHOT scala-tool produced in /Users/Viji/IdeaProjects/MapreduceProject/eBirdProject/project/target/resolution-cache/reports/default-ebirdproject-build-scala-tool.xml
-[debug] 	resolve done (926ms resolve - 33ms download)
+[debug] :: resolution report :: resolve 6475ms :: artifacts dl 258ms
+[debug] 	report for default#ebirdproject-build;0.1-SNAPSHOT compile produced in /Users/Shetty/Desktop/MapReduce/Project/MapreduceProject/eBirdProject/project/target/resolution-cache/reports/default-ebirdproject-build-compile.xml
+[debug] 	report for default#ebirdproject-build;0.1-SNAPSHOT runtime produced in /Users/Shetty/Desktop/MapReduce/Project/MapreduceProject/eBirdProject/project/target/resolution-cache/reports/default-ebirdproject-build-runtime.xml
+[debug] 	report for default#ebirdproject-build;0.1-SNAPSHOT test produced in /Users/Shetty/Desktop/MapReduce/Project/MapreduceProject/eBirdProject/project/target/resolution-cache/reports/default-ebirdproject-build-test.xml
+[debug] 	report for default#ebirdproject-build;0.1-SNAPSHOT provided produced in /Users/Shetty/Desktop/MapReduce/Project/MapreduceProject/eBirdProject/project/target/resolution-cache/reports/default-ebirdproject-build-provided.xml
+[debug] 	report for default#ebirdproject-build;0.1-SNAPSHOT optional produced in /Users/Shetty/Desktop/MapReduce/Project/MapreduceProject/eBirdProject/project/target/resolution-cache/reports/default-ebirdproject-build-optional.xml
+[debug] 	report for default#ebirdproject-build;0.1-SNAPSHOT compile-internal produced in /Users/Shetty/Desktop/MapReduce/Project/MapreduceProject/eBirdProject/project/target/resolution-cache/reports/default-ebirdproject-build-compile-internal.xml
+[debug] 	report for default#ebirdproject-build;0.1-SNAPSHOT runtime-internal produced in /Users/Shetty/Desktop/MapReduce/Project/MapreduceProject/eBirdProject/project/target/resolution-cache/reports/default-ebirdproject-build-runtime-internal.xml
+[debug] 	report for default#ebirdproject-build;0.1-SNAPSHOT test-internal produced in /Users/Shetty/Desktop/MapReduce/Project/MapreduceProject/eBirdProject/project/target/resolution-cache/reports/default-ebirdproject-build-test-internal.xml
+[debug] 	report for default#ebirdproject-build;0.1-SNAPSHOT plugin produced in /Users/Shetty/Desktop/MapReduce/Project/MapreduceProject/eBirdProject/project/target/resolution-cache/reports/default-ebirdproject-build-plugin.xml
+[debug] 	report for default#ebirdproject-build;0.1-SNAPSHOT sources produced in /Users/Shetty/Desktop/MapReduce/Project/MapreduceProject/eBirdProject/project/target/resolution-cache/reports/default-ebirdproject-build-sources.xml
+[debug] 	report for default#ebirdproject-build;0.1-SNAPSHOT docs produced in /Users/Shetty/Desktop/MapReduce/Project/MapreduceProject/eBirdProject/project/target/resolution-cache/reports/default-ebirdproject-build-docs.xml
+[debug] 	report for default#ebirdproject-build;0.1-SNAPSHOT pom produced in /Users/Shetty/Desktop/MapReduce/Project/MapreduceProject/eBirdProject/project/target/resolution-cache/reports/default-ebirdproject-build-pom.xml
+[debug] 	report for default#ebirdproject-build;0.1-SNAPSHOT scala-tool produced in /Users/Shetty/Desktop/MapReduce/Project/MapreduceProject/eBirdProject/project/target/resolution-cache/reports/default-ebirdproject-build-scala-tool.xml
+[debug] 	resolve done (6475ms resolve - 258ms download)
 [info] Done updating.
