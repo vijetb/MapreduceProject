@@ -1,16 +1,12 @@
-import org.apache.spark.mllib.feature.Normalizer
 import org.apache.spark.ml.feature.StandardScaler
-import org.apache.spark.mllib.linalg.Vectors
 import org.apache.spark.ml.feature._
-import org.apache.spark.sql.{DataFrame, SQLContext}
-import org.apache.spark.sql.types.{StructField, StructType}
 import org.apache.spark.{SparkConf, SparkContext}
-import org.apache.spark.mllib.linalg.Vectors
 import org.apache.spark.sql.functions._
 import org.apache.spark.ml.Pipeline
 import org.apache.spark.ml.classification.{RandomForestClassificationModel, RandomForestClassifier}
 import org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator
-import org.apache.spark.ml.feature.MaxAbsScaler
+import org.apache.spark.ml.classification
+
 
 import org.apache.spark.sql.types.{DataTypes, StructType}
 object PreProcess {
@@ -18,9 +14,13 @@ object PreProcess {
     val conf = new SparkConf()
       .setAppName("eBird Project")
       .setMaster("local[*]")
+
+    //      .setMaster("local[*]")
+
     val sc = new SparkContext(conf)
     val sqlContext = new org.apache.spark.sql.SQLContext(sc)
-    val rawData = sc.textFile("input/labeledsmall.csv")
+    val rawData = sc.textFile(args(0))
+    print(rawData.getNumPartitions)
 
     val rawDataWithoutHeader =  rawData.mapPartitionsWithIndex { (idx, iter) => if (idx == 0) iter.drop(1) else iter }
         val preprocessedData = rawDataWithoutHeader.map(data => {
@@ -76,25 +76,26 @@ object PreProcess {
     val scalerModel = scaler.fit(output)
     val scaledData = scalerModel.transform(output)
 
+    val featureIndexer = new VectorIndexer()
+      .setInputCol("scaledFeatures")
+      .setOutputCol("indexedFeatures")
+      .setMaxCategories(15)
 
-    //
-//    output.printSchema
-//
-//
-//    val featureIndexer = new VectorIndexer()
-//      .setInputCol("features")
-//      .setOutputCol("indexedFeatures")
-//      .setMaxCategories(100)
-//
-//    val categoricalFeaturesTransformed = featureIndexer.fit(output).transform(output)
-//
-    val Array(trainingData, testData) = scaledData.randomSplit(Array(0.8, 0.2))
-//
+    val categoricalFeaturesTransformed = featureIndexer.fit(scaledData).transform(scaledData)
+
+    val Array(trainingData, testData) = categoricalFeaturesTransformed.randomSplit(Array(0.8, 0.2))
+
     // Train a RandomForest model.
     val rf = new RandomForestClassifier()
       .setLabelCol("Label")
-      .setFeaturesCol("scaledFeatures")
-      .setNumTrees(100)
+      .setFeaturesCol("indexedFeatures")
+      .setNumTrees(127)
+      .setMaxBins(64)
+      .setMaxDepth(14)
+      .setSubsamplingRate(0.6)
+      .setFeatureSubsetStrategy("auto")
+
+
 
     // Chain indexers and forest in a Pipeline.
     val pipeline = new Pipeline()
@@ -104,7 +105,17 @@ object PreProcess {
     val model = pipeline.fit(trainingData)
 
     // Make predictions.
-    val predictions = model.transform(testData)
+
+
+
+
+    val rfModel = model.stages(0).asInstanceOf[RandomForestClassificationModel]
+//    rfModel.save("rfModel")
+//    val rfModelFile = RandomForestClassificationModel.load("rfModel")
+//    rfModelFile.toDebugString;
+    val predictions = rfModel.transform(testData)
+
+    predictions.select("Label", "prediction").rdd.saveAsTextFile("sample")
     // Select (prediction, true label) and compute test error.
     val evaluator = new MulticlassClassificationEvaluator()
       .setLabelCol("Label")
@@ -112,8 +123,5 @@ object PreProcess {
       .setMetricName("accuracy")
     val accuracy = evaluator.evaluate(predictions)
     println("Test Error = " + (1.0 - accuracy))
-
-    val rfModel = model.stages(0).asInstanceOf[RandomForestClassificationModel]
-    println("Learned classification forest model:\n" + rfModel.toDebugString)
   }
 }

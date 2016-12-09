@@ -4,7 +4,7 @@
 		module="ebirdproject-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20161207201204"
+		publication="20161209125945"
 		e:sbtVersion="0.13" e:scalaVersion="2.10"
 	>
 		<description>
