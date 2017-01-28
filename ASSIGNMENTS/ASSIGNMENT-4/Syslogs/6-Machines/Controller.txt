@@ -1,0 +1,64 @@
+2016-11-04T23:24:04.935Z INFO Ensure step 2 jar file command-runner.jar
+2016-11-04T23:24:04.936Z INFO StepRunner: Created Runner for step 2
+INFO startExec 'hadoop jar /var/lib/aws/emr/step-runner/hadoop-jars/command-runner.jar spark-submit --deploy-mode cluster --class com.vijet.pagerank.Expt s3://vjt-assgn3/Final/SparkTest-0.0.1-SNAPSHOT-jar-with-dependencies.jar s3://vjt-assgn3/Assignment-4-final/input s3://vjt-assgn3/Final/output-6-machines'
+INFO Environment:
+  PATH=/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/sbin:/opt/aws/bin
+  LESS_TERMCAP_md=[01;38;5;208m
+  LESS_TERMCAP_me=[0m
+  HISTCONTROL=ignoredups
+  LESS_TERMCAP_mb=[01;31m
+  AWS_AUTO_SCALING_HOME=/opt/aws/apitools/as
+  UPSTART_JOB=rc
+  LESS_TERMCAP_se=[0m
+  HISTSIZE=1000
+  HADOOP_ROOT_LOGGER=INFO,DRFA
+  JAVA_HOME=/etc/alternatives/jre
+  AWS_DEFAULT_REGION=us-west-2
+  AWS_ELB_HOME=/opt/aws/apitools/elb
+  LESS_TERMCAP_us=[04;38;5;111m
+  EC2_HOME=/opt/aws/apitools/ec2
+  TERM=linux
+  XFILESEARCHPATH=/usr/dt/app-defaults/%L/Dt
+  runlevel=3
+  LANG=en_US.UTF-8
+  AWS_CLOUDWATCH_HOME=/opt/aws/apitools/mon
+  MAIL=/var/spool/mail/hadoop
+  LESS_TERMCAP_ue=[0m
+  LOGNAME=hadoop
+  PWD=/
+  LANGSH_SOURCED=1
+  HADOOP_CLIENT_OPTS=-Djava.io.tmpdir=/mnt/var/lib/hadoop/steps/s-15GBLJ65B3GKJ/tmp
+  _=/etc/alternatives/jre/bin/java
+  CONSOLETYPE=serial
+  RUNLEVEL=3
+  LESSOPEN=||/usr/bin/lesspipe.sh %s
+  previous=N
+  UPSTART_EVENTS=runlevel
+  AWS_PATH=/opt/aws
+  USER=hadoop
+  UPSTART_INSTANCE=
+  PREVLEVEL=N
+  HADOOP_LOGFILE=syslog
+  HOSTNAME=ip-172-31-13-16
+  NLSPATH=/usr/dt/lib/nls/msg/%L/%N.cat
+  HADOOP_LOG_DIR=/mnt/var/log/hadoop/steps/s-15GBLJ65B3GKJ
+  EC2_AMITOOL_HOME=/opt/aws/amitools/ec2
+  SHLVL=5
+  HOME=/home/hadoop
+  HADOOP_IDENT_STRING=hadoop
+INFO redirectOutput to /mnt/var/log/hadoop/steps/s-15GBLJ65B3GKJ/stdout
+INFO redirectError to /mnt/var/log/hadoop/steps/s-15GBLJ65B3GKJ/stderr
+INFO Working dir /mnt/var/lib/hadoop/steps/s-15GBLJ65B3GKJ
+INFO ProcessRunner started child process 7551 :
+hadoop    7551  3241  0 23:24 ?        00:00:00 bash /usr/lib/hadoop/bin/hadoop jar /var/lib/aws/emr/step-runner/hadoop-jars/command-runner.jar spark-submit --deploy-mode cluster --class com.vijet.pagerank.Expt s3://vjt-assgn3/Final/SparkTest-0.0.1-SNAPSHOT-jar-with-dependencies.jar s3://vjt-assgn3/Assignment-4-final/input s3://vjt-assgn3/Final/output-6-machines
+2016-11-04T23:24:06.991Z INFO HadoopJarStepRunner.Runner: startRun() called for s-15GBLJ65B3GKJ Child Pid: 7551
+INFO Synchronously wait child process to complete : hadoop jar /var/lib/aws/emr/step-runner/hadoop-...
+INFO Process still running
+INFO Process still running
+INFO Process still running
+INFO Process still running
+INFO Process still running
+INFO waitProcessCompletion ended with exit code 0 : hadoop jar /var/lib/aws/emr/step-runner/hadoop-...
+INFO total process run time: 5064 seconds
+2016-11-05T00:48:29.721Z INFO Step created jobs: 
+2016-11-05T00:48:29.721Z INFO Step succeeded with exitCode 0 and took 5064 seconds

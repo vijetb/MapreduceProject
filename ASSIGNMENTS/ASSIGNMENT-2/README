@@ -1,0 +1,5 @@
+1. run make command to build all the binaries from the source code
+2. run make mapreduce-with-no-combiner to execute Map-Reduce-with-no-combiner program
+3. run make mapreduce-with-combiner to execute Map-reduce-with-combiner program
+4. run make mapreduce-with-in-mapper-combiner to execute Map-reduce-with-inmapper-combiner
+5. run make mapreduce-with-secondary-sort to execute  Secondary-Sort
